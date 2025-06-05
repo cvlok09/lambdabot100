@@ -5,7 +5,7 @@ const [input, setInput] = useState("");
 const handleSend = async () => {
   if (!input.trim()) return;
   const userMsg = { role: "user", text: input };
-  const res = await fetch("https://your-backend-url.up.railway.app/update", {
+  const res = await fetch("https://lambdabot100.onrender.com/update", {
     method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ message: input }) });
   const data = await res.json();
   const botMsg = { role: "bot", text: data.message || data.error };
